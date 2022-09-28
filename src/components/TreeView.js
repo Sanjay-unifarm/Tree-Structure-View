@@ -1,58 +1,104 @@
+import { useState } from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
+import styled from "styled-components";
+import { Card } from "./Card";
 
 const TreeData = {
+  title: "Product",
   left: {
-    title: "Child1",
+    title: "Beverages 1 ",
+    collapsed: true,
+    id: "01",
     left: {
-      title: "GrandChild1",
+      title: "Water",
+      id: "b01",
+      collapsed: true,
       left: {
-        title: "Great Grand Child",
+        collapsed: true,
+        title: "Leaf Node",
       },
       right: {
-        title: "Great Grand Child",
+        collapsed: true,
+        title: "Leaf Node",
       },
     },
     right: {
-      title: "GrandChild2",
+      title: "Coffee",
+      id: "b01",
+      collapsed: true,
       left: {
-        title: "Great Grand Child",
+        title: "Leaf Node",
+        collapsed: true,
       },
       right: {
-        title: "Great Grand Child",
+        title: "Leaf Node",
+        collapsed: true,
       },
     },
   },
 
   right: {
-    title: "Child2",
+    title: "Bevarages 2",
+    collapsed: true,
+    id: "02",
     left: {
-      title: "GrandChild2",
+      title: "Water",
+      id: "b02",
+      collapsed: true,
       left: {
-        title: "Great Grand Child",
+        title: "Leave Node",
+        collapsed: true,
       },
       right: {
-        title: "Great Grand Child",
+        title: "Leave Node",
+        collapsed: true,
       },
     },
     right: {
-      title: "GrandChild3",
+      title: "Coffee",
+      id: "b02",
+      collapsed: true,
 
       left: {
-        title: "Great Grand Child",
+        title: "Leaf Node",
+        collapsed: true,
       },
       right: {
-        title: "Great Grand Child",
+        title: "Leaf Node",
+        collapsed: true,
       },
     },
   },
 };
 
+const StyledNode = styled.div`
+  padding: 5px;
+  border-radius: 8px;
+  display: inline-block;
+  border: 2px solid grey;
+  width: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  padding: 8px;
+  background-color: #f5f5f5;
+`;
+
 export const SubTree = ({ node }) => {
+  const [data, setData] = useState(node.collapsed);
+
   if (node.left || node.right) {
     return (
-      <TreeNode label={node.title} lineBorderRadius={5}>
-        {node.left && <SubTree node={node.left} />}
-        {node.right && <SubTree node={node.right} />}
+      <TreeNode
+        label={
+          <Card
+            title={node.title}
+            id={node.id}
+            handleClick={() => setData(!data)}
+          />
+        }
+      >
+        {!data && node.left && <SubTree node={node.left} />}
+        {!data && node.right && <SubTree node={node.right} />}
       </TreeNode>
     );
   }
@@ -62,7 +108,12 @@ export const SubTree = ({ node }) => {
 
 export const TreeDataView = () => {
   return (
-    <Tree label={<div>Root</div>}>
+    <Tree
+      // label={<div>Locations</div>}
+      lineWidth={"2px"}
+      lineColor={"green"}
+      lineBorderRadius={"10px"}
+    >
       <SubTree node={TreeData} />
     </Tree>
   );
