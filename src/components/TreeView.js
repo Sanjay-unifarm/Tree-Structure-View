@@ -5,6 +5,7 @@ import { Card } from "./Card";
 
 const TreeData = {
   title: "Product",
+  id:"00",
   left: {
     title: "Beverages 1 ",
     collapsed: true,
@@ -15,11 +16,30 @@ const TreeData = {
       collapsed: true,
       left: {
         collapsed: true,
-        title: "Leaf Node",
+        title: "Mineral Water",
+        id:"001",
+        left: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
+        right: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
+
       },
       right: {
         collapsed: true,
-        title: "Leaf Node",
+        title: "Alkine Water",
+        id:"001",
+        left: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
+        right: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
       },
     },
     right: {
@@ -27,12 +47,30 @@ const TreeData = {
       id: "b01",
       collapsed: true,
       left: {
-        title: "Leaf Node",
+        title: "Black Coffee",
         collapsed: true,
+        id:"001",
+        left: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
+        right: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
       },
       right: {
-        title: "Leaf Node",
+        title: "Cappuccino",
         collapsed: true,
+        id:"001",
+        left: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
+        right: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
       },
     },
   },
@@ -42,30 +80,48 @@ const TreeData = {
     collapsed: true,
     id: "02",
     left: {
-      title: "Water",
+      title: "Milkshake",
       id: "b02",
       collapsed: true,
       left: {
-        title: "Leave Node",
+        title: "Leaf Node",
         collapsed: true,
       },
       right: {
-        title: "Leave Node",
+        title: "Leaf Node",
         collapsed: true,
       },
     },
     right: {
-      title: "Coffee",
+      title: "Energy Drink",
       id: "b02",
       collapsed: true,
 
       left: {
-        title: "Leaf Node",
+        title: "Blue Charge",
         collapsed: true,
+        id:"002",
+        left: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
+        right: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
       },
       right: {
-        title: "Leaf Node",
+        title: "Club-Mate",
         collapsed: true,
+        id:"002",
+        left: {
+          title: "Leave Node",
+          collapsed: true,
+        },
+        right: {
+          title: "Leaf Node",
+          collapsed: true,
+        },
       },
     },
   },

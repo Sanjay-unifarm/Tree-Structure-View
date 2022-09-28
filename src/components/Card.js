@@ -10,7 +10,7 @@ const CardList = styled.div`
 
 const WrapperCard = styled.div`
   margin: 10px 10px;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 150px;
@@ -23,18 +23,15 @@ const WrapperCard = styled.div`
 `;
 
 export const Card = (props) => {
-
-    const {title,id,handleClick}=props;
+  const { title, id, handleClick } = props;
   return (
     <>
-      <CardList >
+      <CardList>
         <WrapperCard onClick={handleClick}>
-
-          <div style={{disply:'flex', flexDirection:'column'}}>
-          <h3>Id:{id}</h3>
-          <h3>{title}</h3>
-            </div>  
-            
+          <div style={{ disply: "flex", flexDirection: "column" }}>
+            <h3>Id:{id}</h3>
+            <h3>{title}</h3>
+          </div>
         </WrapperCard>
       </CardList>
     </>
