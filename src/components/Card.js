@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 const CardList = styled.div`
-  z-index: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
 `;
 
 const WrapperCard = styled.div`
